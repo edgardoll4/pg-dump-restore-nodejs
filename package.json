@@ -1,0 +1,42 @@
+{
+  "name": "@edgardoll4/pg-dump-restore-nodejs",
+  "version": "0.0.6",
+  "description": "Basic postgresql database backup module with pg_dump and pg_restore binaries for windows, macos and linux (version 14 postgresql)",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "author": "Edgardo Lugo",
+  "license": "MIT",
+  "dependencies": {
+    "execa": "^4.0.0",
+    "path": "^0.12.7"
+  },
+  "devDependencies": {
+    "fs-extra": "^10.0.0",
+    "jest": "^27.3.1",
+    "pg": "^8.7.1",
+    "sequelize": "^6.8.0"
+  },
+  "directories": {
+    "test": "tests"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/edgardoll4/pg-dump-restore-nodejs.git"
+  },
+  "keywords": [
+    "pg",
+    "pg_dump",
+    "pg_restore",
+    "postgres",
+    "bin",
+    "windows",
+    "linux",
+    "macos"
+  ],
+  "bugs": {
+    "url": "https://github.com/edgardoll4/pg-dump-restore-nodejs/issues"
+  },
+  "homepage": "https://github.com/edgardoll4/pg-dump-restorejs#readme"
+}
