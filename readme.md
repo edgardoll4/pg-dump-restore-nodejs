@@ -11,7 +11,7 @@ Modified https://github.com/AmitBar2001/pg-dump-restore-node-wrapper project to 
 ## Usage
 
 ```js
-import pgDumpRestore from "@edgardoll4/pg-dump-restore-nodejs";
+import pgDumpRestore from "pg-dump-restore-nodejs";
 
 async function main() {
   const { stdout, stderr } = await pgDumpRestore.dump({
