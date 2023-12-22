@@ -9,7 +9,7 @@
   "author": "Edgardo Lugo",
   "license": "MIT",
   "dependencies": {
-    "execa": "^4.0.0",
+    "execa": "^8.0.0",
     "path": "^0.12.7"
   },
   "devDependencies": {
