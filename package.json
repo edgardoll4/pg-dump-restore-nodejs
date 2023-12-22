@@ -1,6 +1,6 @@
 {
   "name": "pg-dump-restore-nodejs",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "Basic postgresql database backup module with pg_dump and pg_restore binaries for windows, macos and linux (version 14 postgresql)",
   "main": "index.js",
   "scripts": {
