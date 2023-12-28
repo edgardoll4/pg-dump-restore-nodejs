@@ -1,23 +1,78 @@
 const execa = require("execa");
+// import { execa } from "execa";
 const path = require("path");
+// import { path } from "path";
 
-let os = process.platform === "win32" ? "win": process.platform;
-let binariesPath = path.join(
-  __dirname,
-  "bin",
-  os,
-  "bin"
+let os = '';
+switch (process.platform) {
+  case "win32":
+    os = "win";
+    break;
+  case "darwin":
+    os = "mac";
+    break;
+  case "linux":
+    os = "linux";
+    break;
+  case "freebsd":
+    os = "freebsd";
+    break;
+  case "openbsd":
+    os = "openbsd";
+    break;
+  case "sunos":
+    os = "sunos";
+    break;
+  default:
+    break;
+}
+let arch = '';
+switch (process.arch) {
+  case "x64":
+    arch = "x64";
+    break;
+  case "x32":
+    arch = "x86";
+    break;
+  case "arm":
+    arch = "arm";
+    break;
+  case "arm64":
+    arch = "arm64";
+    break;
+  default:
+    break;
+}
+let auxbinariesPath = '';
+
+if (os != 'linux'){
+  auxbinariesPath = path.join(
+    __dirname,
+    "bin",
+    os,
+    "bin"
   );
+}else {
+  binariesPath = '';
+}
+let binariesPath = auxbinariesPath;
 
-let pgRestorePath = path.join(
-  binariesPath,
-  os === "win" ? "pg_restore.exe" : "pg_restore"
-);
+let pgRestorePath ='';
+let pgDumpPath = '';
 
-let pgDumpPath = path.join(
-  binariesPath,
-  os === "win" ? "pg_dump.exe" : "pg_dump"
-);
+if (os != 'linux'){
+  pgRestorePath = path.join(
+    binariesPath,
+    os === "win" ? "pg_restore.exe" : "pg_restore"
+  );
+  pgDumpPath = path.join(
+    binariesPath,
+    os === "win" ? "pg_dump.exe" : "pg_dump"
+  );
+}else {
+  pgRestorePath = "pg_restore";
+  pgDumpPath = "pg_dump";
+}
 
 const dump = function ({
   port = 5432,
